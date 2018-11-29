@@ -34,7 +34,8 @@ func randomChars ( passwordLength int, possibleChars []byte) string {
 func respond( serial string ) ([]byte, error) {
 	log.Println ( "Send to: ", serial)
 	t := time.Now()
-	UID := generatePassword( 256 )
+		UID := generatePassword( 256 )
+
 	log.Println ( "Generate new UID: ", UID)
 	b := AuthAnswer{ serial, t.String(), UID, true}
 	return json.Marshal (b)

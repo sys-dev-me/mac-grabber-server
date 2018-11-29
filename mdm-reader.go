@@ -29,7 +29,7 @@ func  main (){
     // Close the listener when the application closes.
     defer l.Close()
 
-	mysql_connect()
+	//mysql_connect()
     fmt.Println("Listening on " + CONN_HOST + ":" + CONN_PORT)
 
     for {
@@ -66,6 +66,7 @@ func handleRequest(conn net.Conn) {
 		answerBody := new(bytes.Buffer)
 		err = binary.Write(answerBody, binary.BigEndian, &answer)
 		//json.NewEncoder ( answerBody ).Encode ( answer )
+
 		if err != nil {
 			log.Println ( "Something went wrong: ", err )
 		}
