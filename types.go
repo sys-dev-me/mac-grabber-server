@@ -46,9 +46,10 @@ type Version struct {
 }
 
 type Authorize struct {
-        Request         requestAuth
+    Request         requestAuth
     Uri string
     isAuthorize bool
+    UID string
 }
 
 type requestAuth struct {
