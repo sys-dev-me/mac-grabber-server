@@ -11,15 +11,13 @@ import "bytes"
 
 
 const (
-    CONN_HOST = "10.132.15.213"
-    CONN_PORT = "9090"
     CONN_TYPE = "tcp"
 )
 
 func  main (){
 
     // Listen for incoming connections.
-    l, err := net.Listen(CONN_TYPE, CONN_HOST+":"+CONN_PORT)
+    l, err := net.Listen(CONN_TYPE, ":"+os.Args[1])
 
     if err != nil {
         fmt.Println("Error listening:", err.Error())
@@ -30,7 +28,7 @@ func  main (){
     defer l.Close()
 
 	//mysql_connect()
-    fmt.Println("Listening on " + CONN_HOST + ":" + CONN_PORT)
+    fmt.Println("Listening on:" + os.Args[1])
 
     for {
         // Listen for an incoming connection.
