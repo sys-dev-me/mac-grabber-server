@@ -16,6 +16,11 @@ const (
 
 func  main (){
 
+
+	if len(os.Args) < 2 {
+		log.Println ( "Port must be defined. Usage: mdm-reader [port]" )
+		os.Exit(1)
+	}
     // Listen for incoming connections.
     l, err := net.Listen(CONN_TYPE, ":"+os.Args[1])
 
